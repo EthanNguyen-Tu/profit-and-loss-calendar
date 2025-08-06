@@ -5,6 +5,7 @@ interface IconButtonProps {
     onClick: () => void;
     title: string;
     ariaLabel?: string;
+    variant?: "primary" | "secondary";
     children?: React.ReactNode;
     style?: React.CSSProperties;
 }
@@ -14,13 +15,14 @@ export default function IconButton({
     children,
     onClick,
     ariaLabel,
+    variant = "primary",
     title,
     style,
 }: IconButtonProps) {
     return (
         <button
             onClick={onClick}
-            className={styles.button}
+            className={`${styles.button} ${styles[variant]}`}
             aria-label={ariaLabel}
             title={title}
             style={style}

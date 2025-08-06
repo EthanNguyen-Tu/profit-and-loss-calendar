@@ -13,11 +13,26 @@
     padding: 0.5rem;
     border-radius: 0.25rem;
     transition: background-color 150ms ease-in-out;
+    cursor: pointer;
+}
+
+.primary {
     background-color: var(--background);
 }
 
+.secondary {
+    color: var(--background);
+    background-color: transparent;
+    border: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
-    .button:hover {
+    .primary:hover {
+        color: var(--background);
         background-color: var(--midground);
+    }
+
+    .secondary:hover {
+        color: var(--midground);
     }
 }
