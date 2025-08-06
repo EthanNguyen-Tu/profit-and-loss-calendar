@@ -1,0 +1,23 @@
+@media screen and (max-width: 640px) {
+    .content {
+        display: none;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 150ms ease-in-out;
+    background-color: var(--background);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .button:hover {
+        background-color: var(--midground);
+    }
+}
