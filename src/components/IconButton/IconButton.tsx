@@ -3,23 +3,23 @@ import styles from "./IconButton.module.css";
 interface IconButtonProps {
     icon: React.ReactNode;
     onClick: () => void;
-    disabled?: boolean;
     title: string;
     ariaLabel?: string;
-    variant?: "primary" | "secondary";
     children?: React.ReactNode;
+    disabled?: boolean;
     style?: React.CSSProperties;
+    variant?: "primary" | "secondary";
 }
 
 export default function IconButton({
     icon,
-    children,
     onClick,
-    disabled,
-    ariaLabel,
-    variant = "primary",
     title,
+    ariaLabel,
+    children,
+    disabled,
     style,
+    variant = "primary",
 }: IconButtonProps) {
     return (
         <button
