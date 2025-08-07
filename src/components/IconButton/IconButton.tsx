@@ -3,6 +3,7 @@ import styles from "./IconButton.module.css";
 interface IconButtonProps {
     icon: React.ReactNode;
     onClick: () => void;
+    disabled?: boolean;
     title: string;
     ariaLabel?: string;
     variant?: "primary" | "secondary";
@@ -14,6 +15,7 @@ export default function IconButton({
     icon,
     children,
     onClick,
+    disabled,
     ariaLabel,
     variant = "primary",
     title,
@@ -26,6 +28,7 @@ export default function IconButton({
             aria-label={ariaLabel}
             title={title}
             style={style}
+            disabled={disabled}
         >
             {icon}
             {children && <div className={styles.content}>{children}</div>}
