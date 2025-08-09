@@ -14,6 +14,7 @@
     --custom-white: #f2efe9;
     --custom-gray: #7c8585;
     --custom-black: #252627;
+    --custom-black-25: #25262725;
 
     --background: var(--custom-white);
     --midground: var(--custom-gray);
