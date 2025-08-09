@@ -7,6 +7,7 @@ interface DateRangeModalProps {
     isOpen: boolean;
     onClose: () => void;
     title: string;
+    ctas?: React.ReactNode;
 }
 
 export default function DateRangeSelectorModal({
@@ -14,6 +15,7 @@ export default function DateRangeSelectorModal({
     onClose,
     isOpen,
     title,
+    ctas,
 }: DateRangeModalProps) {
     if (!isOpen) return null;
 
@@ -29,6 +31,7 @@ export default function DateRangeSelectorModal({
                 />
             </div>
             {children}
+            {ctas && <div className={styles.ctas}>{ctas}</div>}
         </div>
     );
 }
