@@ -1,23 +1,23 @@
 import styles from "./IconButton.module.css";
 
 interface IconButtonProps {
-    icon: React.ReactNode;
     onClick: () => void;
     title: string;
     ariaLabel?: string;
     children?: React.ReactNode;
     disabled?: boolean;
+    icon?: React.ReactNode;
     style?: React.CSSProperties;
     variant?: "primary" | "secondary";
 }
 
 export default function IconButton({
-    icon,
     onClick,
     title,
     ariaLabel,
     children,
     disabled,
+    icon,
     style,
     variant = "primary",
 }: IconButtonProps) {
