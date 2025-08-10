@@ -1,0 +1,56 @@
+.container {
+    min-height: 6rem;
+    border: 1px solid var(--midground);
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    position: relative;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.25rem;
+}
+
+.dateCurrentMonth {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--custom-black);
+    background-color: transparent !important;
+}
+
+.dateNotCurrentMonth {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--custom-gray);
+    background-color: transparent !important;
+}
+
+.noteTooltip {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    z-index: 50;
+    background-color: var(--background);
+    color: var(--foreground);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        font-size: 0.75rem;
+    }
+}
