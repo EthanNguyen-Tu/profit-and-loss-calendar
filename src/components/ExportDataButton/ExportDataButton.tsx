@@ -26,7 +26,7 @@ export default function ExportDataButton() {
             icon={<Download size={16} />}
             onClick={handleExport}
             title="Export Calendar Data"
-            ariaLabel={"Export calendar data button"}
+            ariaLabel={"Export calendar data"}
         >
             Export
         </IconButton>

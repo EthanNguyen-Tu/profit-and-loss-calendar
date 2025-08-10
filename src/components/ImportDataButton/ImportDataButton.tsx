@@ -48,7 +48,7 @@ export default function ImportDataButton() {
             icon={<Upload size={16} />}
             onClick={triggerFileInput}
             title="Import Calendar Data"
-            ariaLabel="Import calendar data button"
+            ariaLabel="Import calendar data"
         >
             Import
             <input
