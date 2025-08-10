@@ -32,9 +32,10 @@ export default function DayInfoModal({
         if (day) {
             const plValue = parseFloat(pl) || 0;
             updateDayData(day.fullDate, {
+                dateTime:
+                    day.date.getTime() || new Date(day.calendarDay).getTime(),
                 pl: plValue,
                 notes: notes.trim(),
-                date: day.date || new Date(day.date),
             });
         }
         onClose();

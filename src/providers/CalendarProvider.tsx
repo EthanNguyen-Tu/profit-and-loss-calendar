@@ -13,15 +13,18 @@ export default function CalendarProvider({ children }: CalendarProviderProps) {
         setData({});
     }, []);
 
-    const calculateRangePL = (startDate: string, endDate: string): number => {
+    const calculateRangePL = (
+        startDateTime: number,
+        endDateTime: number
+    ): number => {
         let total = 0;
-        const start = new Date(startDate);
-        const end = new Date(endDate);
 
-        Object.keys(data).forEach((dateKey) => {
-            const date = new Date(dateKey);
-            if (date >= start && date <= end) {
-                total += data[dateKey].pl || 0;
+        Object.values(data).forEach((entry) => {
+            if (
+                entry.dateTime >= startDateTime &&
+                entry.dateTime <= endDateTime
+            ) {
+                total += entry.pl || 0;
             }
         });
 
@@ -32,14 +35,13 @@ export default function CalendarProvider({ children }: CalendarProviderProps) {
     const exportData = (): Record<string, DayData> => {
         const exportableData: Record<string, DayData> = {};
 
-        Object.keys(data).forEach((dateKey) => {
-            const entry = data[dateKey];
+        Object.entries(data).forEach(([dateKey, entry]) => {
             if (
                 entry &&
                 (entry.pl !== 0 || (entry.notes && entry.notes.trim() !== ""))
             ) {
                 exportableData[dateKey] = {
-                    date: new Date(dateKey),
+                    dateTime: entry.dateTime,
                     pl: entry.pl || 0,
                     notes: entry.notes || "",
                 };
@@ -50,27 +52,22 @@ export default function CalendarProvider({ children }: CalendarProviderProps) {
     };
 
     const getAllDataInRange = (
-        startDate: string,
-        endDate: string
+        startDateTime: number,
+        endDateTime: number
     ): DayData[] => {
         const dataInRange: DayData[] = [];
-        const start = new Date(startDate);
-        const end = new Date(endDate);
 
-        Object.keys(data).forEach((dateKey) => {
-            const date = new Date(dateKey);
-            if (date >= start && date <= end && data[dateKey].pl !== 0) {
-                dataInRange.push({
-                    date: new Date(dateKey),
-                    pl: data[dateKey].pl,
-                    notes: data[dateKey].notes,
-                });
+        Object.values(data).forEach((entry) => {
+            if (
+                entry.dateTime >= startDateTime &&
+                entry.dateTime <= endDateTime &&
+                entry.pl !== 0
+            ) {
+                dataInRange.push(entry);
             }
         });
 
-        return dataInRange.sort(
-            (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-        );
+        return dataInRange.sort((a, b) => a.dateTime - b.dateTime);
     };
 
     const getDayData = (dateKey: string): DayData => {
@@ -100,7 +97,10 @@ export default function CalendarProvider({ children }: CalendarProviderProps) {
             const entry: unknown = importedData[dateKey];
             if (entry && isDayDataValid(entry)) {
                 cleanedData[dateKey] = {
-                    date: new Date(dateKey),
+                    dateTime:
+                        typeof entry.dateTime === "number"
+                            ? entry.dateTime
+                            : new Date(dateKey).getTime(),
                     pl: typeof entry.pl === "number" ? entry.pl : 0,
                     notes: typeof entry.notes === "string" ? entry.notes : "",
                 };
@@ -122,8 +122,8 @@ export default function CalendarProvider({ children }: CalendarProviderProps) {
     return (
         <CalendarContext.Provider
             value={{
-                calculateRangePL,
                 data,
+                calculateRangePL,
                 exportData,
                 getAllDataInRange,
                 getDayData,

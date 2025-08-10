@@ -15,13 +15,18 @@ export default function DateRangeCalculateModal({
     onClose,
 }: DateRangeCalculateModalProps) {
     const { calculateRangePL } = useCalendar();
-    const [startDate, setStartDate] = useState("");
-    const [endDate, setEndDate] = useState("");
+    const [startDate, setStartDate] = useState<string>("");
+    const [endDate, setEndDate] = useState<string>("");
     const [result, setResult] = useState<number | null>(null);
 
     const handleCalculate = () => {
         if (startDate && endDate) {
-            setResult(calculateRangePL(startDate, endDate));
+            setResult(
+                calculateRangePL(
+                    new Date(startDate).getTime(),
+                    new Date(endDate).getTime()
+                )
+            );
         }
     };
 

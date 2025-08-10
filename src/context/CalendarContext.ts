@@ -2,10 +2,13 @@ import { DayData } from "@/types/calendar.types";
 import { createContext } from "react";
 
 type CalendarContextType = {
-    calculateRangePL: (startDate: string, endDate: string) => number;
+    calculateRangePL: (startDateTime: number, endDateTime: number) => number;
     data: Record<string, DayData>;
     exportData: () => Record<string, DayData>;
-    getAllDataInRange: (startDate: string, endDate: string) => DayData[];
+    getAllDataInRange: (
+        startDateTime: number,
+        endDateTime: number
+    ) => DayData[];
     getDayData: (dateKey: string) => DayData;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     importData: (importedData: any) => boolean;

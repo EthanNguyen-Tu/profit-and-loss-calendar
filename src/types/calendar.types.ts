@@ -6,7 +6,7 @@ type CalendarDay = {
 };
 
 type DayData = {
-    date: Date;
+    dateTime: number;
     pl: number;
     notes: string;
 };
