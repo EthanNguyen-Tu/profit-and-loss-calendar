@@ -40,7 +40,7 @@ export const getDaysInMonth = (year: number, month: number): CalendarDay[] => {
         days.push({
             date: date,
             dayNumber: day,
-            fullDate: formatDate(date),
+            calendarDay: formatDate(date),
             isCurrentMonth: false,
         });
     }
@@ -51,7 +51,7 @@ export const getDaysInMonth = (year: number, month: number): CalendarDay[] => {
         days.push({
             date: date,
             dayNumber: day,
-            fullDate: formatDate(date),
+            calendarDay: formatDate(date),
             isCurrentMonth: true,
         });
     }
@@ -67,7 +67,7 @@ export const getDaysInMonth = (year: number, month: number): CalendarDay[] => {
         days.push({
             date: date,
             dayNumber: nextMonthDay,
-            fullDate: formatDate(date),
+            calendarDay: formatDate(date),
             isCurrentMonth: false,
         });
         nextMonthDay++;

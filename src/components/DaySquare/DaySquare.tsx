@@ -26,7 +26,7 @@ export default function DaySquare({ day, onClick }: DaySquareProps) {
     const { getDayData } = useCalendar();
     const [showNoteTooltip, setShowNoteTooltip] = useState(false);
 
-    const dayData = getDayData(day.fullDate);
+    const dayData = getDayData(day.calendarDay);
     const pl = dayData.pl || 0;
     const dayColor = getCurrencyColorClass(pl);
     const hasNote = dayData.notes && dayData.notes.trim() !== "";

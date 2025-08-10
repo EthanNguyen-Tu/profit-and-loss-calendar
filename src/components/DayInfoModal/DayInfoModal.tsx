@@ -22,7 +22,7 @@ export default function DayInfoModal({
 
     useEffect(() => {
         if (day && isOpen) {
-            const dayData = getDayData(day.fullDate);
+            const dayData = getDayData(day.calendarDay);
             setPl(dayData.pl.toString() || "");
             setNotes(dayData.notes || "");
         }
@@ -31,7 +31,7 @@ export default function DayInfoModal({
     const handleSave = () => {
         if (day) {
             const plValue = parseFloat(pl) || 0;
-            updateDayData(day.fullDate, {
+            updateDayData(day.calendarDay, {
                 dateTime:
                     day.date.getTime() || new Date(day.calendarDay).getTime(),
                 pl: plValue,

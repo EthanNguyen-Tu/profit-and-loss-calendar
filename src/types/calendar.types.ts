@@ -1,7 +1,7 @@
 type CalendarDay = {
+    calendarDay: string;
     date: Date;
     dayNumber: number;
-    fullDate: string;
     isCurrentMonth: boolean;
 };
 
