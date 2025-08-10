@@ -1,0 +1,14 @@
+.header {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    text-align: center;
+    font-weight: 600;
+    gap: 1rem;
+    padding: 0.5rem 0.25rem;
+    color: var(--custom-black);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
