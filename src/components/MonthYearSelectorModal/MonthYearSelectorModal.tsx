@@ -47,16 +47,14 @@ export default function MonthYearSelectorModal({
                         onClick={onClose}
                         title={"Cancel"}
                         ariaLabel={"Cancel"}
-                    >
-                        Cancel
-                    </IconButton>
+                        icon={"Cancel"}
+                    />
                     <IconButton
                         onClick={handleApply}
                         title={"Apply"}
                         ariaLabel={"Apply"}
-                    >
-                        Apply
-                    </IconButton>
+                        icon={"Apply"}
+                    />
                 </>
             }
         >

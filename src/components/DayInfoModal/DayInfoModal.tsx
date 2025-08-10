@@ -63,16 +63,14 @@ export default function DayInfoModal({
                         onClick={onClose}
                         title={"Cancel"}
                         ariaLabel={"Cancel"}
-                    >
-                        Cancel
-                    </IconButton>
+                        icon={"Cancel"}
+                    />
                     <IconButton
                         onClick={handleSave}
                         title={"Save"}
                         ariaLabel={"Save"}
-                    >
-                        Save
-                    </IconButton>
+                        icon={"Save"}
+                    />
                 </>
             }
         >
