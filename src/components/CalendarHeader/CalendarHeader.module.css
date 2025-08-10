@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: var(--midground);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 0.5rem;
+    overflow-x: auto;
+}
+
+.actionGroup {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dateText {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 150ms ease-in-out;
+}
+
+.profitText {
+    overflow-x: auto;
+    white-space: nowrap;
+    min-width: 0;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+}
