@@ -23,7 +23,7 @@ export default function DayInfoModal({
     useEffect(() => {
         if (day && isOpen) {
             const dayData = getDayData(day.calendarDay);
-            setPl(dayData.pl.toString() || "");
+            setPl(dayData.pl == 0 ? "" : dayData.pl.toString());
             setNotes(dayData.notes || "");
         }
     }, [day, isOpen, getDayData]);
@@ -82,9 +82,10 @@ export default function DayInfoModal({
                     </label>
                     <input
                         type="number"
-                        step="0.01"
+                        step="1"
                         value={pl}
                         onChange={(e) => setPl(e.target.value)}
+                        placeholder="0.00"
                     />
                 </div>
                 <div className="inputEntry">
