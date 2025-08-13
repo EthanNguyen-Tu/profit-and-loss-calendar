@@ -7,8 +7,8 @@ import DateRangeCalculateModal from "@/components/DateRangeCalculateModal/DateRa
 import MonthYearSelectorModal from "@/components/MonthYearSelectorModal/MonthYearSelectorModal";
 import styles from "./CalendarHeader.module.css";
 import IconButton from "@/components/IconButton/IconButton";
-import ExportDataButton from "../ExportDataButton/ExportDataButton";
-import ImportDataButton from "../ImportDataButton/ImportDataButton";
+import ExportDataButton from "@/components/ExportDataButton/ExportDataButton";
+import ImportDataButton from "@/components/ImportDataButton/ImportDataButton";
 
 interface CalendarHeaderProps {
     currentDate: Date;
@@ -47,13 +47,13 @@ export default function CalendarHeader({
                 title="Click to go to previous month"
             />
             <div className={styles.content}>
-                <h1
+                <h2
                     className={styles.dateText}
                     onClick={() => setIsMYSModalOpen(true)}
                     title="Click to select calendar month and year"
                 >
                     {month} {year}
-                </h1>
+                </h2>
                 <div
                     className={`${styles.profitText} ${getCurrencyColorClass(
                         monthlyTotal
