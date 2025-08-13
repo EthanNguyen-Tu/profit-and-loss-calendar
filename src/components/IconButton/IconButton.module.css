@@ -31,13 +31,20 @@
     border: none;
 }
 
+.tertiary {
+    color: var(--custom-white);
+    background-color: transparent;
+    border: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .primary:hover {
         color: var(--background);
         background-color: var(--midground);
     }
 
-    .secondary:hover {
+    .secondary:hover,
+    .tertiary:hover {
         color: var(--midground);
     }
 }

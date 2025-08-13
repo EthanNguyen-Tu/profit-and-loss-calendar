@@ -8,7 +8,7 @@ interface IconButtonProps {
     disabled?: boolean;
     icon?: React.ReactNode;
     style?: React.CSSProperties;
-    variant?: "primary" | "secondary";
+    variant?: "primary" | "secondary" | "tertiary";
 }
 
 export default function IconButton({
