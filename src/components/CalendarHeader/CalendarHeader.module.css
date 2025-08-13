@@ -27,12 +27,3 @@
     cursor: pointer;
     transition: color 150ms ease-in-out;
 }
-
-.profitText {
-    overflow-x: auto;
-    white-space: nowrap;
-    min-width: 0;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    font-weight: 500;
-}

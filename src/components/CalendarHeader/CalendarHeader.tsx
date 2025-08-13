@@ -1,5 +1,4 @@
 import useCalendar from "@/hooks/useCalendar";
-import { formatUSD, getCurrencyColorClass } from "@/lib/currency";
 import { getMonthName } from "@/lib/months";
 import { ChevronLeft, Calculator, ChevronRight } from "lucide-react";
 import { useState } from "react";
@@ -9,6 +8,7 @@ import styles from "./CalendarHeader.module.css";
 import IconButton from "@/components/IconButton/IconButton";
 import ExportDataButton from "@/components/ExportDataButton/ExportDataButton";
 import ImportDataButton from "@/components/ImportDataButton/ImportDataButton";
+import ProfitText from "@/components/ProfitText/ProfitText";
 
 interface CalendarHeaderProps {
     currentDate: Date;
@@ -54,14 +54,7 @@ export default function CalendarHeader({
                 >
                     {month} {year}
                 </h2>
-                <div
-                    className={`${styles.profitText} ${getCurrencyColorClass(
-                        monthlyTotal
-                    )}`}
-                    title="Monthly Total Profit/Loss"
-                >
-                    {monthlyTotal !== 0 ? formatUSD(monthlyTotal) : "$0.00"}
-                </div>
+                <ProfitText amount={monthlyTotal} prefix="Monthly Total " />
                 <div className={styles.actionGroup}>
                     <IconButton
                         icon={<Calculator size={16} />}
