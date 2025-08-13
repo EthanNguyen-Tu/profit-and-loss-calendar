@@ -20,13 +20,8 @@ export default function AboutButton() {
                 icon={<Info />}
                 onClick={handleClick}
                 title={"About"}
-                style={{
-                    position: "fixed",
-                    top: "1rem",
-                    right: "3rem",
-                    zIndex: 999,
-                }}
                 variant="tertiary"
+                style={{ padding: 0 }}
             />
             <Modal
                 isOpen={showAboutModal}

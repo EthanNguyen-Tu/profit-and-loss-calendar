@@ -21,13 +21,8 @@ export default function HelpButton() {
                 icon={<CircleQuestionMark />}
                 onClick={handleClick}
                 title={"Help"}
-                style={{
-                    position: "fixed",
-                    top: "1rem",
-                    right: "1rem",
-                    zIndex: 999,
-                }}
                 variant="tertiary"
+                style={{ padding: 0 }}
             />
             <Modal
                 isOpen={showHelpModal}

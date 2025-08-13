@@ -14,8 +14,10 @@ export default function Home() {
                 <div className={styles.header}>
                     <h1>P&L Calendar</h1>
                     <p>By Ethan Nguyen-Tu</p>
-                    <AboutButton />
-                    <HelpButton />
+                    <div className={styles.buttonGroup}>
+                        <AboutButton />
+                        <HelpButton />
+                    </div>
                 </div>
                 <Calendar />
                 <PLChart />
