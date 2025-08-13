@@ -26,7 +26,7 @@
 }
 
 .secondary {
-    color: var(--background);
+    color: var(--custom-black);
     background-color: transparent;
     border: none;
 }
