@@ -5,10 +5,16 @@ type CalendarDay = {
     isCurrentMonth: boolean;
 };
 
+type ChartData = {
+    cumulativePL: number;
+    displayDate: string;
+    pl: number;
+};
+
 type DayData = {
     dateTime: number;
     pl: number;
     notes: string;
 };
 
-export type { CalendarDay, DayData };
+export type { CalendarDay, ChartData, DayData };

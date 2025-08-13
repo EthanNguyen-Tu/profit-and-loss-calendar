@@ -3,6 +3,7 @@
 import { Calendar } from "@/components/Calendar/Calendar";
 import CalendarProvider from "@/providers/CalendarProvider";
 import styles from "./page.module.css";
+import { PLChart } from "@/components/PLChart/PLChart";
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
                     <p>By Ethan Nguyen-Tu</p>
                 </div>
                 <Calendar />
+                <PLChart />
                 <p className={styles.footer}>
                     Copyright © 2025 Ethan Nguyen-Tu. All rights reserved.
                 </p>
