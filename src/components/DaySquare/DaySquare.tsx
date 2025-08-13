@@ -1,4 +1,4 @@
-import { formatUSD, getCurrencyColorClass } from "@/lib/currency";
+import { abbreviateUSD, getCurrencyColorClass } from "@/lib/currency";
 import { useState } from "react";
 import { FileText } from "lucide-react";
 import useCalendar from "@/hooks/useCalendar";
@@ -60,7 +60,7 @@ export default function DaySquare({ day, onClick }: DaySquareProps) {
                     </div>
                 )}
             </div>
-            {pl !== 0 ? formatUSD(pl) : ""}
+            {pl !== 0 ? abbreviateUSD(pl) : ""}
         </div>
     );
 }
