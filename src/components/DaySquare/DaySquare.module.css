@@ -11,6 +11,14 @@
     word-break: break-word;
 }
 
+@media screen and (max-width: 800px) {
+    .container {
+        font-size: 0.75rem;
+        padding: 0.25rem;
+        min-height: 4rem;
+    }
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -47,10 +55,4 @@
     white-space: pre-wrap;
     word-break: break-word;
     overflow-wrap: break-word;
-}
-
-@media screen and (max-width: 640px) {
-    .container {
-        font-size: 0.75rem;
-    }
 }
