@@ -30,7 +30,6 @@ export default function AboutButton() {
                 style={{
                     maxWidth: "90%",
                     minWidth: "350px",
-                    alignItems: "flex-start",
                     fontSize: "0.8rem",
                     zIndex: 999,
                 }}
@@ -51,7 +50,9 @@ export default function AboutButton() {
                     &quot;Import&quot; button when you next open the calendar,
                     allowing you to restore your changes.
                 </p>
-                <p>Copyright © 2025 Ethan Nguyen-Tu. All rights reserved.</p>
+                <p style={{ textAlign: "center" }}>
+                    Copyright © 2025 Ethan Nguyen-Tu. All rights reserved.
+                </p>
             </Modal>
         </>
     );
