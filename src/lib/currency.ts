@@ -14,12 +14,13 @@ export const getCurrencyColorClass = (value: number) => {
 
 export const abbreviateUSD = (
     value: number,
-    fractionDigits: number = 3
+    fractionDigits: number = 1
 ): string => {
-    if (value >= 1000000000)
+    const absValue = Math.abs(value);
+    if (absValue >= 1000000000)
         return formatUSD(value / 1000000000, fractionDigits) + "B";
-    if (value >= 1000000)
+    if (absValue >= 1000000)
         return formatUSD(value / 1000000, fractionDigits) + "M";
-    if (value >= 1000) return formatUSD(value / 1000, fractionDigits) + "k";
-    return formatUSD(value, fractionDigits);
+    if (absValue >= 1000) return formatUSD(value / 1000, fractionDigits) + "k";
+    return formatUSD(value, 2);
 };
