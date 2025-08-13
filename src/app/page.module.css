@@ -29,3 +29,20 @@
     z-index: 999;
 }
 
+.githubLink {
+    color: #181717;
+    line-height: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .githubLink:hover {
+        color: var(--midground);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .githubLink {
+        filter: invert();
+    }
+}
+
