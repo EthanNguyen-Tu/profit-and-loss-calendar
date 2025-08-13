@@ -9,6 +9,7 @@ interface DateRangeModalProps {
     onClose: () => void;
     title: string;
     ctas?: React.ReactNode;
+    style?: React.CSSProperties;
 }
 
 export default function DateRangeSelectorModal({
@@ -17,6 +18,7 @@ export default function DateRangeSelectorModal({
     isOpen,
     title,
     ctas,
+    style,
 }: DateRangeModalProps) {
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
@@ -36,7 +38,7 @@ export default function DateRangeSelectorModal({
     return (
         <>
             <div className={styles.overlay} onClick={onClose} />
-            <div className={styles.container}>
+            <div className={styles.container} style={style}>
                 <div className={styles.header}>
                     <h2>{title}</h2>
                     <IconButton
