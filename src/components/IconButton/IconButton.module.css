@@ -32,9 +32,15 @@
 }
 
 .tertiary {
-    color: var(--custom-white);
+    color: var(--custom-black);
     background-color: transparent;
     border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .tertiary {
+        color: var(--custom-white);
+    }
 }
 
 @media (hover: hover) and (pointer: fine) {
