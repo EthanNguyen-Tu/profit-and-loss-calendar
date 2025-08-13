@@ -6,7 +6,6 @@
     border-radius: 0.5rem;
     overflow: hidden;
     border: 2px solid var(--midground);
-    padding: 1rem;
 }
 
 @media (prefers-color-scheme: light) {
